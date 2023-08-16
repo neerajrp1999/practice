@@ -15,6 +15,8 @@ public class Main {
         //new pattern4().pattern4_caller(5);
         //new pattern5().pattern5_caller(5);
         //new pattern6().pattern6_caller(5);
-        new pattern7().pattern7_caller(5);
+        //new pattern7().pattern7_caller(5);
+        //new pattern8().pattern8_caller(5);
+        new pattern9().pattern9_caller(5);
     }
 }
