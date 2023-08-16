@@ -17,6 +17,8 @@ public class Main {
         //new pattern6().pattern6_caller(5);
         //new pattern7().pattern7_caller(5);
         //new pattern8().pattern8_caller(5);
-        new pattern9().pattern9_caller(5);
+        //new pattern9().pattern9_caller(5);
+        //new pattern10().pattern10_caller(5);
+        new any_base_to_decimal().any_base_to_decimal_test("3b",16);
     }
 }
