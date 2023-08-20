@@ -19,6 +19,7 @@ public class Main {
         //new pattern8().pattern8_caller(5);
         //new pattern9().pattern9_caller(5);
         //new pattern10().pattern10_caller(5);
-        new any_base_to_decimal().any_base_to_decimal_test("3b",16);
+        //new any_base_to_decimal().any_base_to_decimal_test("3b",16);
+        new digit_frequency().digit_frequency_caller(566654434,4);
     }
 }
