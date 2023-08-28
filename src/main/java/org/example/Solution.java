@@ -3,11 +3,29 @@ package org.example;
 import java.util.*;
 
 class Solution {
+    public int singleNumber(int[] nums) {
+        int count[] = new int[32];
+        for (int i = 0; i < 32; i++)
+            for (int j = 0; j < nums.length; j++)
+                if ((nums[j] & (1 << i)) != 0)
+                    count[i] += 1;
+        int res = 0;
+        System.out.println(res);
+        for (int i = 0; i < 32; i++) {
+            res += (count[i] % 3) * (1 << i);
+            System.out.println(res);
+        }
+        res = res / (nums.length % 3);
+
+        return res;
+    }
     public static void main(String[] args) {
         //System.out.println("ans:"+new Solution().findReplaceString1( "vmokgggqzp", new int[]{3,5,1}, new String[]{"kg","ggq","mo"}, new String[]{"s","so","bfr"}));
         //System.out.println("ans:"+new Solution().findReplaceString1( "cizokxcijwbyspcfcqws", new int[]{17,1,14,3,9,11}, new String[]{"qw","iz","cf","okxc","wb","ysp"}, new String[]{"m","rq","hc","ymfy","mt","drn"}));
         //System.out.println("ans:"+new Solution().findReplaceString1( "abcde", new int[]{2,2}, new String[]{"cde","cdef"}, new String[]{"fe","f"}));
-        new Solution().grayCode(2).stream().forEach(System.out::println);
+        System.out.println("ans:"+new Solution().singleNumber(  new int[]{0,1,0,2,2,2,1,0,1,1}));
+        //new Solution().grayCode(2).stream().forEach(System.out::println);
+
 
     }
     public int reverse(int x) {
@@ -220,9 +238,15 @@ class Solution {
         List<Integer> rs=new ArrayList<Integer>();
         rs.add(0);
         for(int i=0;i<n;i++){
+            System.out.println("=============");
             int size=rs.size();
-            for(int k=size-1;k>=0;k--)
-                rs.add(rs.get(k) | 1<<i);
+            System.out.println(size);
+            System.out.println(i);
+            for(int k=size-1;k>=0;k--) {
+                System.out.println(k);
+
+                rs.add(rs.get(k) | 1 << i);
+            }
         }
         return rs;
     }
