@@ -19,12 +19,36 @@ class Solution {
 
         return res;
     }
+    public static void generateParenthesisCaller(int n){
+        if(n<0) {
+            System.out.println("return");
+            System.out.println(n);
+            return;
+        }
+        System.out.println("before:"+n);
+        generateParenthesisCaller(n-1);
+        System.out.println("After:"+n);
+    }
+    public int findSunNNaturanNumber(int n){
+        if(n<=1){
+            return 1;
+        }
+        return n+findSunNNaturanNumber(n-1);
+    }
+    public List<String> generateParenthesis(int n){
+        List<String> stringList=new ArrayList<>();
+        String s="";
+        generateParenthesisCaller(n);
+        return stringList;
+    }
     public static void main(String[] args) {
         //System.out.println("ans:"+new Solution().findReplaceString1( "vmokgggqzp", new int[]{3,5,1}, new String[]{"kg","ggq","mo"}, new String[]{"s","so","bfr"}));
         //System.out.println("ans:"+new Solution().findReplaceString1( "cizokxcijwbyspcfcqws", new int[]{17,1,14,3,9,11}, new String[]{"qw","iz","cf","okxc","wb","ysp"}, new String[]{"m","rq","hc","ymfy","mt","drn"}));
         //System.out.println("ans:"+new Solution().findReplaceString1( "abcde", new int[]{2,2}, new String[]{"cde","cdef"}, new String[]{"fe","f"}));
-        System.out.println("ans:"+new Solution().singleNumber(  new int[]{0,1,0,2,2,2,1,0,1,1}));
+        //System.out.println("ans:"+new Solution().singleNumber(  new int[]{0,1,0,2,2,2,1,0,1,1}));
         //new Solution().grayCode(2).stream().forEach(System.out::println);
+        //generateParenthesisCaller(5);
+        System.out.println("ans:"+new Solution().findSunNNaturanNumber(4));
 
 
     }
