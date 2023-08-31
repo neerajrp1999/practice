@@ -48,10 +48,52 @@ class Solution {
         //System.out.println("ans:"+new Solution().singleNumber(  new int[]{0,1,0,2,2,2,1,0,1,1}));
         //new Solution().grayCode(2).stream().forEach(System.out::println);
         //generateParenthesisCaller(5);
-        System.out.println("ans:"+new Solution().findSunNNaturanNumber(4));
+        //System.out.println("ans:"+new Solution().findSunNNaturanNumber(4));
+        new Solution().merge(new int[]{1,2,3,0,0,0},3,new int[]{2,5,6},3);
 
 
     }
+
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int p=m+n-1;
+        System.out.println("p:"+p);
+        n--;
+        System.out.println("n:"+n);
+        m--;
+        System.out.println("m:"+m);
+        while(p>=0 && m>0 && n>0){
+            if(nums1[n]>nums2[m] && m>0 && n>0){
+                nums1[p--]=nums1[m--];
+
+                System.out.println("while if");
+                System.out.println("p:"+p);
+                System.out.println("n:"+n);
+                System.out.println("m:"+m);
+                System.out.println(nums1);
+
+            }else{
+                nums1[p--]=nums2[n--];
+                System.out.println("while else");
+                System.out.println("p:"+p);
+                System.out.println("n:"+n);
+                System.out.println("m:"+m);
+                System.out.println(nums1);
+
+            }
+        }
+        while(m>0){}{
+            nums1[p--]=nums1[m--];
+        }
+        while(n>0) {
+            nums1[p--]=nums2[n--];
+        }
+        for (int j:nums1) {
+            System.out.println(j);
+        }
+        Arrays.stream(nums1).forEach(System.out::println);
+
+    }
+
     public int reverse(int x) {
         boolean is=false;
         if(x<0){
