@@ -49,7 +49,8 @@ class Solution {
         //new Solution().grayCode(2).stream().forEach(System.out::println);
         //generateParenthesisCaller(5);
         //System.out.println("ans:"+new Solution().findSunNNaturanNumber(4));
-        new Solution().merge(new int[]{1,2,3,0,0,0},3,new int[]{2,5,6},3);
+        //new Solution().merge(new int[]{1,2,3,0,0,0},3,new int[]{2,5,6},3);
+        new Solution().removeDuplicates(new int[]{1,1,2});
 
 
     }
@@ -409,6 +410,25 @@ class Solution {
         return r;
 
          */
+
+            public int removeDuplicates(int[] nums) {
+                int k=nums.length;
+                int[] r=new int[nums.length];
+                r[0]=nums[0];
+                --k;
+                int j=1;
+                for(int i=1;i<nums.length;i++){
+                    if(nums[i]!=nums[j-1]){
+                        nums[j]=nums[i];
+                        k--;
+                        j++;
+                    }
+                }
+                Arrays.stream(nums).forEach(System.out::println);
+                System.out.println(j);
+                return k;
+
+            }
 
 
 }
